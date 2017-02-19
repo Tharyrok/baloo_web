@@ -1,6 +1,8 @@
 #/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
+## Memo : ./gotty --address=127.0.0.1 --port=4242 --credential demo:test -w --reconnect screen -x -R -S main
+
 from flask import Flask, redirect, request, render_template, g, jsonify
 from flask_babel import Babel, gettext
 
