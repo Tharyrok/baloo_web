@@ -1,8 +1,10 @@
 #/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from flask import Flask, redirect, request, render_template, g
+from flask import Flask, redirect, request, render_template, g, jsonify
 from flask_babel import Babel, gettext
+
+
 
 app = Flask(__name__)
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
@@ -19,8 +21,19 @@ def language_detection():
 @app.route('/<language>')
 def lang_home(language):
     setattr(g, 'lang', language)
-    return render_template('layout.html', data={"lang": language})
+    return render_template('home.html', data={"lang": language})
 
+@app.route('/status')
+def get_status():
+    return jsonify('True')
+
+@app.route('/create')
+def post_create():
+    return jsonify('True')
+
+@app.route('/remove')
+def get_remove():
+    return jsonify('True')
 
 if __name__ == '__main__':
     app.run(debug=False)
