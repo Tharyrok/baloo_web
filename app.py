@@ -1,4 +1,4 @@
-#/usr/bin/env python3
+#/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
 from flask import Flask, redirect, request, render_template, g, jsonify
